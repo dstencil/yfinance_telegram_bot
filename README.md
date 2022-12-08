@@ -2,9 +2,10 @@
 
 ### Telegram bot for retrieving current stock and cryptocurrency prices from yahoo finance
 
-- Add authorization key to Constants.py
 
+#### Before running script:
+- Add authorization key to Constants.py
+- Host on replit.com
 ```
 $ python main.py
-
 ```
