@@ -1,7 +1,6 @@
-import Constants as keys
 from telegram.ext import *
 import Responses as R
-
+import os
 
 print("Bot started...")
 
@@ -23,7 +22,7 @@ def error(update, context):
     print(f"Update {update} caused error {context.error}")
 
 def main():
-    updater = Updater(keys.API_KEY, use_context=True)
+    updater = Updater(os.environ['API_KEY'], use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start_command))
