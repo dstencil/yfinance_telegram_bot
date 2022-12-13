@@ -3,9 +3,6 @@ from telegram.ext import *
 import Responses as R
 
 
-
-
-
 print("Bot started...")
 
 def start_command(update, context):
@@ -39,5 +36,7 @@ def main():
     updater.start_polling()
     updater.idle()
 
-main()
+if __name__ == "__main__":
+    main()
+    
 
