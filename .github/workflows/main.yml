@@ -28,4 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/yfinance_telegram_bot:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ce:yfinance_telegram_bot_v.0.0.1
