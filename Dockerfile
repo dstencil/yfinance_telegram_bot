@@ -1,23 +1,15 @@
-ARG APP_IMAGE=python:3.11-rc-alpine
+# syntax=docker/dockerfile:1
 
-FROM $APP_IMAGE as base
+FROM python:3.11.1-slim-bullseye
 
-FROM base as builder
-
-RUN mkdir /install
-
-WORKDIR /install
+RUN pip install --upgrade pip
 
 COPY requirements.txt /requirements.txt
 
 
-RUN pip install --install-option="--prefix=/install" -r /requirements.txt
+RUN pip install -r requirements.txt
 
-FROM base
+COPY . .
 
-
-
-ADD . /project
-WORKDIR /project
 
 ENTRYPOINT [ "python", "main.py"]
